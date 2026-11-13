@@ -1,0 +1,113 @@
+@keyframes shineAboutFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-13px); }
+}
+
+@keyframes shineAboutSun {
+  0%, 100% { transform: rotate(-7deg) translateY(0); }
+  50% { transform: rotate(7deg) translateY(-7px); }
+}
+
+@keyframes shineAboutBook {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-7px) rotate(-2deg); }
+}
+
+@keyframes shineAboutSprout {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(7deg); }
+}
+
+@keyframes shineAboutSparkle {
+  0%, 100% { opacity: .35; transform: scale(.7) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.2) rotate(18deg); }
+}
+
+/* Animate the complete illustration on an HTML wrapper for consistent browser support. */
+.illustration {
+  animation: shineAboutFloat 2.6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.float {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: shineAboutFloat 3.2s ease-in-out infinite;
+}
+
+.sun {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: shineAboutSun 3.8s ease-in-out infinite;
+}
+
+.book {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: shineAboutBook 3.6s ease-in-out infinite;
+}
+
+.sprout {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: shineAboutSprout 2.8s ease-in-out infinite;
+}
+
+.sparkle {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: shineAboutSparkle 1.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float,
+  .sun,
+  .book,
+  .sprout,
+  .sparkle {
+    animation: none;
+  }
+}
+
+/* Animated mini illustrations for the WHY SHINESCHOOL value cards. */
+.valueIllustration {
+  width: 112px;
+  height: 96px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 1rem;
+  transform-origin: center bottom;
+  animation: shineAboutFloat 3s ease-in-out infinite;
+}
+
+.happyArt { animation-delay: 0s; }
+.growthArt { animation-delay: .35s; }
+.togetherArt { animation-delay: .7s; }
+
+.happyArt svg { animation: shineHappyPulse 2.2s ease-in-out infinite; }
+.growthArt svg { animation: shineBulbGlow 2.6s ease-in-out infinite; }
+.togetherArt svg { animation: shineTogetherBounce 2.8s ease-in-out infinite; }
+
+@keyframes shineHappyPulse {
+  0%, 100% { transform: scale(1) rotate(-2deg); }
+  50% { transform: scale(1.08) rotate(2deg); }
+}
+
+@keyframes shineBulbGlow {
+  0%, 100% { transform: rotate(-3deg); filter: drop-shadow(0 0 0 rgba(255, 205, 77, 0)); }
+  50% { transform: rotate(3deg); filter: drop-shadow(0 0 9px rgba(255, 205, 77, .75)); }
+}
+
+@keyframes shineTogetherBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .valueIllustration,
+  .happyArt svg,
+  .growthArt svg,
+  .togetherArt svg {
+    animation: none;
+  }
+}
